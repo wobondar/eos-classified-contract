@@ -1,0 +1,63 @@
+{
+  "types": [],
+  "structs": [{
+      "name": "user",
+      "base": "",
+      "fields": {
+        "name": "string"
+      }
+    },{
+      "name": "new_user",
+      "base": "",
+      "fields": {
+        "account": "name",
+        "value": "user"
+      }
+    },{
+      "name": "classified",
+      "base": "",
+      "fields": {
+        "name": "string",
+        "text": "string"
+      }
+    },{
+      "name": "new_classified",
+      "base": "",
+      "fields": {
+        "account": "name",
+        "uid": "string",
+        "value": "classified"
+      }
+    }
+  ],
+  "actions": [{
+      "action_name": "newuser",
+      "type": "new_user"
+    },{
+      "action_name": "newclassified",
+      "type": "new_classified"
+    }
+  ],
+  "tables": [{
+      "table_name": "users_table",
+      "index_type": "i64",
+      "key_names": [
+        "account"
+      ],
+      "key_types": [
+        "name"
+      ],
+      "type": "new_user"
+    },{
+      "table_name": "classifieds_table",
+      "index_type": "i64",
+      "key_names": [
+        "account"
+      ],
+      "key_types": [
+        "name"
+      ],
+      "type": "new_classified"
+    }
+  ]
+}
